@@ -1,10 +1,11 @@
 import React, { useCallback, useState } from 'react'
 import QUESTIONS from '../questions';
 //import quizCompleteImg from '../assets/quize-complete.png';
-import quizCompleteImg from '../assets/quiz-complete.png'
+// import quizCompleteImg from '../assets/quiz-complete.png'
 // import QuestionTimer from './QuestionTimer';
 // import Answers from './Answers';
 import Question from './Question';
+import Summary from './Summary';
 const Quize = () => {
     // const [activeQutionIndex, setActiveQuestionIndex] = useState(0);
 
@@ -23,10 +24,7 @@ const Quize = () => {
     const handleSkipAnswer = useCallback(() => handleSelectAnswer(null), [handleSelectAnswer]);
     if (quizIscomplete) {
         return (
-            <div id='summary'>
-                <img src={quizCompleteImg} alt="" />
-                <h2>Quize Completed</h2>
-            </div>
+           <Summary userAnswers={userAnswers}/> 
         )
     }
 
